@@ -1,0 +1,168 @@
+/* 
+    Document   : styles
+    Created on : 5-Sep-2013, 11:29:54 AM
+    Author     : Nick
+    Description:
+        Style sheet for divs, footer, header, and navbar.
+*/
+body
+{
+    
+    background: -moz-linear-gradient(#252525, #0a0a0a);
+    background: -webkit-gradient(linear, from(#252525), to(#0a0a0a));
+    background: -webkit-linear-gradient(#252525, #0a0a0a);     
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+#CenterContent{
+    float: left;
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-color: darkgrey;
+    width: 1050px;
+    height: 820px;
+    line-height: 300%;
+    padding: 25px;
+
+
+   
+ 
+   
+}
+
+#Content{
+    
+    margin-left: auto;
+    margin-right: auto;
+    background-position: center;
+    background-color: darkslategray;
+    width: 1750px;
+    height: 930px;
+    line-height: 300%;
+    padding: 25px;
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+    box-shadow: 0 10px 6px -6px #777;
+
+}
+
+#BannerAd
+{
+
+
+    clear: both;
+    height: 102px;
+    width: 1750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    text-align: center;
+}
+
+
+#CenterContent p
+{
+    width:500px;
+    font-family: Helvetica, sans-serif;
+    
+}
+#SideContent
+{
+    float: right;
+    margin-left: auto;
+    margin-right: auto;
+    width: 640px;
+    height: 870px;
+    background-color: grey;
+}
+
+#SideContent p
+{
+    width: 370px;
+    padding: 25px;
+    font-family: Helvetica, sans-serif;
+}
+
+
+
+
+#wrapper {
+    
+        top: 10px;
+        position: relative;
+        font-size: 100%;
+       
+}
+
+
+#menu {	
+	position: relative;
+        clear: both;				
+        left: 0px;
+        top: -10px;
+        height: 125px;
+        background-position: center;
+        background: -moz-linear-gradient(#252525, #0a0a0a);
+        background: -webkit-gradient(linear, from(#252525), to(#0a0a0a));
+        background: -webkit-linear-gradient(#252525, #0a0a0a);
+        line-height: 300%;
+        width: 1802px;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom-color:#aaa;
+        border-right-color:#aaa;
+        border-top-color:#ddd;
+        border-left-color:#ddd;
+
+} 
+#menu a:hover {
+	background-color: #574DD8;
+}
+#menu a:visited:active  {
+        background-color: #2419B2;
+}
+.item {
+	position: relative;
+        background-color: #00728B;
+	background: #4c4c4c; /* Old browsers */
+        background: -moz-linear-gradient(top, #4c4c4c 0%, #595959 12%, #666666 25%, #4c4c4c 37%, #474747 44%, #4c4c4c 53%, #2c2c2c 66%, #2c2c2c 71%, #2b2b2b 76%, #1c1c1c 91%, #000000 100%, #131313 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4c4c4c), color-stop(12%,#595959), color-stop(25%,#666666), color-stop(37%,#4c4c4c), color-stop(44%,#474747), color-stop(53%,#4c4c4c), color-stop(66%,#2c2c2c), color-stop(71%,#2c2c2c), color-stop(76%,#2b2b2b), color-stop(91%,#1c1c1c), color-stop(100%,#000000), color-stop(100%,#131313)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#4c4c4c 37%,#474747 44%,#4c4c4c 53%,#2c2c2c 66%,#2c2c2c 71%,#2b2b2b 76%,#1c1c1c 91%,#000000 100%,#131313 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#4c4c4c 37%,#474747 44%,#4c4c4c 53%,#2c2c2c 66%,#2c2c2c 71%,#2b2b2b 76%,#1c1c1c 91%,#000000 100%,#131313 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #4c4c4c 0%,#595959 12%,#666666 25%,#4c4c4c 37%,#474747 44%,#4c4c4c 53%,#2c2c2c 66%,#2c2c2c 71%,#2b2b2b 76%,#1c1c1c 91%,#000000 100%,#131313 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #4c4c4c 0%,#595959 12%,#666666 25%,#4c4c4c 37%,#474747 44%,#4c4c4c 53%,#2c2c2c 66%,#2c2c2c 71%,#2b2b2b 76%,#1c1c1c 91%,#000000 100%,#131313 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4c4c4c', endColorstr='#131313',GradientType=0 ); /* IE6-9 */
+        border: 1px solid black;
+	color: #FFF;
+	padding: 3px;
+	text-decoration: none;
+        left: 0px;
+        top: 81px;
+        font-size: 22px;
+        font-family: Verdana, Geneva, sans-serif;
+}
+#Footer{
+        clear: both;
+        background-color: white;
+        height: 50px;
+        width: 1750px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 880px;
+        text-align: center;
+    
+}
+
+#featured{
+    
+    padding: 25px;
+    
+}
