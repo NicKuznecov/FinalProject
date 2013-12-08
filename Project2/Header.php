@@ -13,7 +13,7 @@ File Description: Header page which consists of the nav menu, and css/js include
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="description" content="A short description." />
 	<meta name="keywords" content="put, keywords, here" />
-	<title>Personal Portfolio</title>
+	<title>Garlacov Tournaments</title>
 	<link rel="shortcut icon"  href="images/favicon.ico"/>
         <link rel="stylesheet" href="styles/styles.css"/>
     
