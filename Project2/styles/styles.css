@@ -121,6 +121,7 @@ body
         font-family: Helvetica, sans-serif;
         color: white;
         font-size: 52px;
+        padding:20px;
 }
 
 #menu {	
@@ -134,7 +135,7 @@ body
         background: -webkit-gradient(linear, from(#252525), to(#0a0a0a));
         background: -webkit-linear-gradient(#252525, #0a0a0a);
         line-height: 300%;
-        width: 1302px;
+        width: 1452px;
         margin-left: auto;
         margin-right: auto;
         border-bottom-color:#aaa;
@@ -262,12 +263,11 @@ body
 
 .rightpart
 {
-    width: 200px;
-    text-align: center;
+ 
 }
 .leftpart
 {
-    width: 200px;
+    width: 600px;
     text-align: center;
 }
 

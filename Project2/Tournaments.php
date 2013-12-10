@@ -81,7 +81,9 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
  $query = "SELECT
 			tournament_id,
 			tournament_name,
-			tournament_description
+			tournament_description,
+                        tournament_owner
+                        
 		
                  FROM
 			tournaments
@@ -112,19 +114,15 @@ else
 		//prepare the table
 		echo '<table border=1>
 			  <tr>
-				<th>Tournament</th>
-				<th>Last post</th>
+				<th>Tournaments</th>
+			
 			  </tr>';	
 			
 		while($row = mysqli_fetch_assoc($result))
 		{				
 			echo '<tr>';
 				echo '<td class="leftpart">';
-					echo '<h3><a href="Tournaments.php?id=' . $row['tournament_id'] . '">' . $row['tournament_name'] . '</a></h3>' . $row['tournament_description'];
-				echo '</td>';
-				echo '<td class="rightpart">';
-						
-                                                    echo '<a href="Tournament.php?id=' . $row['user_name'] .  '">' . '</a> ' . 'Created at: ' . $row['MAX(posts.post_date)'] . '</br> Created by: ' . $row['tournaments.tournament_owner)'] . ' ';
+					echo '<h3><a href="Tournaments.php?id=' . $row['tournament_id'] . '">' . $row['tournament_name'] . '</a></h3>' . $row['tournament_description'] . '</br>' . 'Created at: ' . $row['MAX(posts.post_date)'] . '</br> Created by: ' . $row['tournament_owner'] . ' ';
 				echo '</td>';
 			echo '</tr>';
                         
@@ -137,7 +135,7 @@ else
                     </div>
                    
                     <div class="tab">
-                        <input type="radio" id="MiddleTab" name="tab-group-1">
+                        <input type="radio" id="MiddleTab" name="tab-group-1"  >
                         <label for="MiddleTab">Tournament Posts</label>
 
                         <div class="TabContent">
@@ -258,7 +256,7 @@ else
                         </div> 
                     </div>
                     <div class="tab">
-                        <input type="radio" id="RightTab" name="tab-group-1">
+                        <input type="radio" id="RightTab" name="tab-group-1"  >
                         <label for="RightTab">Tournament Members</label>
 
                         <div class="TabContent">

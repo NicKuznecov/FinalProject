@@ -12,7 +12,7 @@ include('Content.php');
 ?>
 
 <?php
-echo '<h2>My Profile/Tournaments</h2>';
+echo '<h2>My Profile</h2>';
 
 
   $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -65,9 +65,14 @@ echo '<h2>My Profile/Tournaments</h2>';
     }
 
     echo '</table>';
+ 
+    
+    
     if (!isset($_GET['user_id']) || ($user_id == $_GET['user_id'])) {
       echo '<p>Would you like to <a href="EditProfile.php?id=' . $_GET['id'] . '">' . 'edit your profile</a>?</p>';
-    
+  }
+    echo '<h2>My Tournaments</h2>';
+      
           echo '<table>';
     if (!empty($row['user_profilepic'])) {
       echo '<tr><td class="label">Tournaments</br> <img src="' . $row['user_Picture'] .
@@ -77,12 +82,15 @@ echo '<h2>My Profile/Tournaments</h2>';
       
       
         echo '</table>';
+        
+      if (!isset($_GET['user_id']) || ($user_id == $_GET['user_id'])) {
+      echo '<p>Would you like to <a href="CreateTournament.php?id=' . $_GET['id'] . '">' . 'create a tournament</a>?</p>';
+        
     }
-  } 
   else {
     echo '<p class="error">There was a problem accessing your profile.</p>';
   }
-
+ }
   mysqli_close($dbc);
 ?>
 
