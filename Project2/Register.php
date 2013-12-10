@@ -1,8 +1,10 @@
 <?php
-//signup.php
+$page = "Register";
 include 'ConnectVars.php';
-
 include 'Header.php';
+
+
+
 ?>
 
 <?php
@@ -15,28 +17,27 @@ echo '<h3>Sign Up</h3>';
 
 if($_SERVER['REQUEST_METHOD'] != 'POST')
 {
-    /*the form hasn't been posted yet, display it
-	  note that the action="" will cause the form to post to the same page it is on */
+
     echo '<form method="post" action="">
  	 	Username: <input type="text" name="user_name" />              </br>
  		Password: <input type="password" name="user_pass">            </br>
 		Password again: <input type="password" name="user_pass_check"></br>
-		First Name: <input type="text" name="user_fName">    </br>
-                Last Name: <input type="text" name="user_lName">     </br>
+		First Name: <input type="text" name="user_firstName">    </br>
+                Last Name: <input type="text" name="user_lastName">     </br>
                 Country <input type="text" name="user_country">        </br>              
                 E-mail: <input type="email" name="user_email">                </br>
- 		Profile Picture: <input type="file" name="user_profilepic">      </br>
+ 		Profile Picture: <input type="file" name="user_Picture">      </br>
                 <input type="submit" value="Submit Information" />
  	 </form>';
 }
 else
 {
 
-	$errors = array(); /* declare the array for later use */
+	$errors = array(); 
 	
 	if(isset($_POST['user_name']))
 	{
-		//the user name exists
+		
 		if(!preg_match('/^[a-z\d_]{4,28}$/i',($_POST['user_name'])))
 		{
 			$errors[] = 'The username can only contain letters and digits.';
@@ -65,14 +66,14 @@ else
 	}
 	
         
-        if(isset($_POST['user_fName']))
+        if(isset($_POST['user_firstName']))
 	{
-		//the user name exists
-		if(!ctype_alnum($_POST['user_fName']))
+	
+		if(!ctype_alnum($_POST['user_firstName']))
 		{
 			$errors[] = 'The first name field can only contain letters and digits.';
 		}
-		if(strlen($_POST['user_fName']) > 30)
+		if(strlen($_POST['user_firstName']) > 30)
 		{
 			$errors[] = 'The first name field cannot be longer than 30 characters.';
 		}
@@ -83,14 +84,14 @@ else
 	}	
         
         
-        if(isset($_POST['user_lName']))
+        if(isset($_POST['user_lastName']))
 	{
-		//the user name exists
-		if(!ctype_alnum($_POST['user_lName']))
+		
+		if(!ctype_alnum($_POST['user_lastName']))
 		{
 			$errors[] = 'The last name field can only contain letters and digits.';
 		}
-		if(strlen($_POST['user_lName']) > 30)
+		if(strlen($_POST['user_lastName']) > 30)
 		{
 			$errors[] = 'The last name field cannot be longer than 30 characters.';
 		}
@@ -103,7 +104,7 @@ else
         
         if(isset($_POST['user_country']))
 	{
-		//the user name exists
+		
 		if(!ctype_alnum($_POST['user_country']))
 		{
 			$errors[] = 'The country field can only contain letters and digits.';
@@ -119,13 +120,13 @@ else
 	}	
 	
         
-        if(!empty($errors)) /*check for an empty array, if there are errors, they're in this array (*/
+        if(!empty($errors)) 
 	{
 		echo 'Uh-oh.. a couple of fields are not filled in correctly..';
 		echo '<ul>';
-		foreach($errors as $key => $value) /* walk through the array so all the errors get displayed */
+		foreach($errors as $key => $value)
 		{
-			echo '<li>' . $value . '</li>'; /* this generates a nice error list */
+			echo '<li>' . $value . '</li>';
 		}
 		echo '</ul>';
 	}
@@ -133,21 +134,21 @@ else
 	{
 
 		$sql = "INSERT INTO
-					users_tournament(user_name, user_pass, user_email, user_fName, user_lName, user_country, user_profilepic, user_date, user_level)
+					tournament_users(user_name, user_pass, user_email, user_firstName, user_lastName, user_country, user_Picture, user_date, user_level)
 				VALUES('" . mysql_real_escape_string($_POST['user_name']) . "',
 					   '" . sha1($_POST['user_pass']) . "',
 					   '" . mysql_real_escape_string($_POST['user_email']) . "',
-                                           '" . mysql_real_escape_string($_POST['user_fName']) . "',
-                                           '" . mysql_real_escape_string($_POST['user_lName']) . "',
+                                           '" . mysql_real_escape_string($_POST['user_firstName']) . "',
+                                           '" . mysql_real_escape_string($_POST['user_lastName']) . "',
                                            '" . mysql_real_escape_string($_POST['user_country']) . "',
-                                           '" . mysql_real_escape_string($_POST['user_profilepic']) . "', 
+                                           '" . mysql_real_escape_string($_POST['user_Picture']) . "', 
 						NOW(),
 						0)";
 						
 		$result = mysql_query($sql);
 		if(!$result)
 		{
-			//something went wrong, display the error
+			
 			echo 'Something went wrong while registering. Please try again later.';
 		        echo mysql_error(); 
 		}

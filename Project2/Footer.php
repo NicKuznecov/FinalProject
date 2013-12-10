@@ -1,9 +1,9 @@
 
 <!--
 File name: footer.php
-Authors name: Nick Kuznecov
-Web-site name: Personal Portfolio
-File Description: footer of the Personal Portfolio web-site, includes the copyright statement.
+Authors name: Nick Kuznecov, Jake Garland
+Web-site name: Garlacov Tournaments
+File Description: footer of the Garlacov Tournaments web-site, includes the copyright statement.
 -->        
                
         

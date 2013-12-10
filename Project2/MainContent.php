@@ -1,8 +1,8 @@
 
 <!--
-File name: mainContent.php
-Authors name: Nick Kuznecov
-Web-site name: Personal Portfolio
+File name: MainContent.php
+Authors name: Nick Kuznecov, Jake Garland
+Web-site name: Garlacov Tournaments
 File Description: 
 --> 
         

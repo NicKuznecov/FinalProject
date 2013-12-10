@@ -1,5 +1,5 @@
 <?php 
-
+session_start();
 
   define('DB_HOST', 'webdesign4.georgianc.on.ca');
   define('DB_USER', 'db200231116');      
@@ -7,7 +7,7 @@
   define('DB_NAME', 'db200231116');
 
 
-session_start();
+
 
 
 if(!mysql_connect(DB_HOST, DB_USER, DB_PASSWORD))

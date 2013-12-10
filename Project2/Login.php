@@ -1,8 +1,8 @@
 <!--
-File name: Home.php
-Authors name: Nick Kuznecov
-Web-site name: Personal Portfolio
-File Description: Home page of the Personal Portfolio web-site.
+File name: Login.php
+Authors name: Nick Kuznecov, Jake Garland
+Web-site name: Garlacov Tournaments
+File Description: Login page of Garlacov Tournaments
 -->
 
 <?php
@@ -32,7 +32,7 @@ else
 {	
     if($_SERVER['REQUEST_METHOD'] != 'POST')
 	{
-                    //Login Form
+                  
                     echo '<form method="post" action="">
 			Username: <input type="text" name="user_name" /></br>
 			Password: <input type="password" name="user_pass"></br>
@@ -65,13 +65,13 @@ else
                 }
 		else
 		{
-                        // Select username and password information from database
+                        
 			$query = "SELECT 
 						user_id,
 						user_name,
 						user_pass
 					FROM
-						users_tournament
+						tournament_users
 					WHERE
 						user_name = '" . mysqli_real_escape_string($dbc, ($_POST['user_name'])) . "'
 					AND
@@ -82,22 +82,22 @@ else
 			$result = mysqli_query($dbc, $query);
 			if(!$result)
 			{
-				//something went wrong, display the error
+				
 				echo 'Something went wrong while signing in. Please try again later.';
 			        //echo mysql_error(); 
 			}
 			else
 			{
-				// if user information does not match, give error.
+			
 				if(mysqli_num_rows($result) == 0)
 				{
 					echo 'You have supplied a wrong username/password combination.';
                                        
 				}
-				//Otherwise, sign the user in.
+			
                                 else
 				{
-					//User is now signed in
+					
 					$_SESSION['signed_in'] = true;
 					
 					while($row = mysqli_fetch_assoc($result))
@@ -106,7 +106,7 @@ else
 						$_SESSION['user_name'] 	= $row['user_name'];
 						$_SESSION['user_level'] = $row['user_level'];
 					}
-					//Welcome Message
+				
 					echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="Home.php">Return to the Home page.</a>.';
                                       
                                         
