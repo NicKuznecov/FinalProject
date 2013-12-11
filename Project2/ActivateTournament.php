@@ -25,42 +25,43 @@ else
 	{
 		
 		echo '<form method="post" action="">
-			Player #1: <input type="text" name="register_name" /><br />
-                        Player #2: <input type="text" name="register_name" /><br />
-                        Player #3: <input type="text" name="register_name" /><br />
-                        Player #4: <input type="text" name="register_name" /><br />
-                        Player #5: <input type="text" name="register_name" /><br />
-                        Player #6: <input type="text" name="register_name" /><br />
-                        Player #7: <input type="text" name="register_name" /><br />
-                        Player #8: <input type="text" name="register_name" /><br />
-                        Player #9: <input type="text" name="register_name" /><br />
-                        Player #10: <input type="text" name="register_name" /><br />
-                        Player #11: <input type="text" name="register_name" /><br />
-                        Player #12: <input type="text" name="register_name" /><br />
-                        Player #13: <input type="text" name="register_name" /><br />
-                        Player #14: <input type="text" name="register_name" /><br />
-                        Player #15: <input type="text" name="register_name" /><br />
-                        Player #16: <input type="text" name="register_name" /><br />
+			Player #1: <input type="text" name="register" class="1" /><br />
+                        Player #2: <input type="text" name="register" class="2" /><br />
+                        Player #3: <input type="text" name="register" class="3"/><br />
+                        Player #4: <input type="text" name="register" class="4"/><br />
+                        Player #5: <input type="text" name="register" class="5"/><br />
+                        Player #6: <input type="text" name="register" class="6"/><br />
+                        Player #7: <input type="text" name="register" class="7"/><br />
+                        Player #8: <input type="text" name="register" class="8"/><br />
+                        Player #9: <input type="text" name="register" class="9"/><br />
+                        Player #10: <input type="text" name="register" class="10"/><br />
+                        Player #11: <input type="text" name="register" class="11"/><br />
+                        Player #12: <input type="text" name="register" class="12"/><br />
+                        Player #13: <input type="text" name="register" class="13"/><br />
+                        Player #14: <input type="text" name="register" class="14"/><br />
+                        Player #15: <input type="text" name="register" class="15"/><br />
+                        Player #16: <input type="text" name="register" class="16"/><br />
                         <input type="submit" value="Activate Tournament" />
 		 </form>';
 	}
 	else
 	{
 		
-            $register_query = "INSERT INTO
-                                            registers
-                                                    (register_name,
-                                                     register_tournament)
-                        VALUES('" . mysql_real_escape_string($_POST['register_name']) . "',
-
-                        '" . mysql_real_escape_string($_POST['register_tournament']) . "'
-       
-       
-                                  )";
+		$sql = "
+                        
+                        INSERT INTO
+					registers(register_id, register_name, register_date, register_tournament, register_by, register_number, register_level)
+				VALUES('" . mysql_real_escape_string($_POST['register_name']) . "',
+					   NOW(),
+					   " . $_SESSION['tournament_id'] . ",
+                                           " . $_SESSION['user_id'] . ",
+                                           " . mysql_real_escape_string($_POST[1+1])  . ",
+                                           0)"; 
+						
                 
 		
                
-                $result = mysql_query($query);
+                $result = mysql_query($sql);
               
 		if(!$result)
 		{

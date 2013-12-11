@@ -47,7 +47,7 @@ File Description: Header page which consists of the nav menu, and css/js include
         <div id="menu">
        
             <a id="Home" class="item" href="Home.php">Home</a> 
-            <a id="Tournaments" class="item" href="Tournaments.php">Tournaments</a> 
+            <a id="Tournaments" class="item" href="Tournaments.php?id=1">Tournaments</a> 
             <a id="Login" class="item" href="Login.php">Login</a> 
             <a id="Register" class="item" href="Register.php">Register</a> 
             <a id="Profile" class="item" <?php echo ' <a href="Profile.php?id=' . $_SESSION['user_id'] . '"> My Profile/Tournaments'  ?> </a>

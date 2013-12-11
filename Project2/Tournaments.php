@@ -17,6 +17,9 @@ include('Header.php');
 <?php
 include('Content.php');
 ?>
+<?php 
+    
+?>
                 <div class="tabs">
                     <div class="tab">
                         <input type="radio" id="Roundof16" name="tab-group-2" checked>
@@ -31,7 +34,7 @@ include('Content.php');
                         <label for="Quarterfinals">Quarterfinals</label>
 
                         <div class="TabContent">
-                              <?php include('TournamentTable.php');?>
+                              <?php include('QuarterFinalTournamentTable.php');?>
                         </div> 
                     </div>
                     <div class="tab">
@@ -39,7 +42,7 @@ include('Content.php');
                         <label for="Semifinals">Semifinals</label>
 
                         <div class="TabContent">
-                             <?php include('TournamentTable.php');?>
+                             <?php include('SemiFinalTournamentTable.php');?>
                         </div> 
                     </div>
                     <div class="tab">
@@ -47,7 +50,7 @@ include('Content.php');
                         <label for="Finals">Finals</label>
 
                         <div class="TabContent">
-                              <?php include('TournamentTable.php');?>
+                              <?php include('FinalTournamentTable.php');?>
                         </div> 
                     </div>
                     <div class="tab">
@@ -55,7 +58,7 @@ include('Content.php');
                         <label for="Champion!">Champion!</label>
 
                         <div class="TabContent">
-                              <?php include('TournamentTable.php');?>
+                              <?php include('SummaryTournamentTable.php');?>
                         </div> 
                     </div>
                 </div>
@@ -95,7 +98,7 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 $result = mysqli_query($dbc, $query);
 $latestPost = mysqli_query($dbc, $query);      
 
-
+                
 
 if(!$result)
 {
@@ -321,21 +324,18 @@ else
                                         }
                                         //fetch the posts from the database
                                         $posts_sql = "SELECT
-                                                                tournament_posts.post_tournament,
-                                                                tournament_posts.post_content,
-                                                                tournament_posts.post_date,
-                                                                tournament_posts.post_by,
-                                                                tournament_users.user_id,
-                                                                tournament_users.user_name,
-                                                                tournament_users.user_Picture
+                                                                tournament_id,
+                                                                registers.register_id,
+                                                                registers.register_name
+                           
                                                         FROM
-                                                                tournament_posts
+                                                                tournaments
                                                         LEFT JOIN
-                                                                tournament_users
+                                                                registers
                                                         ON
-                                                                tournament_posts.post_by = tournament_users.user_id
+                                                                tournaments.tournament_id=  registers.register_tournament
                                                         WHERE
-                                                                tournament_posts.post_tournament = " . mysqli_real_escape_string($dbc, $_GET['id']);
+                                                                registers.register_tournament = " . mysqli_real_escape_string($dbc, $_GET['id']);
 
                                         $posts_result = mysqli_query($dbc, $posts_sql);
 
@@ -350,7 +350,7 @@ else
                                                 {     
                                                         echo '<tr class="tournament-registers">
                                                                      
-                                                                        <td class="user-post">' . '<img src="' . MM_UPLOADPATH . $posts_row['user_Picture'] . '">' . '<br/>' . $posts_row['user_name'] . '<br/>' . '</td>
+                                                                        <td class="user-post">' . '<img src="' . MM_UPLOADPATH . $posts_row['user_Picture'] . '">' . '<br/>' . $posts_row['register_name'] . '<br/>' . '</td>
                                           
                                                                   </tr>';
                                                 }
