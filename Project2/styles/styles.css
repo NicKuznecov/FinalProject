@@ -31,7 +31,7 @@ body
     height: 1700px;
     line-height: 300%;
     padding: 25px;
-
+    overflow: auto;
 
    
  
@@ -72,6 +72,7 @@ body
 {
     width:500px;
     font-family: Helvetica, sans-serif;
+
     
 }
 
@@ -94,6 +95,7 @@ body
     padding: 10px;
     height: 1730px;
     background-color: lightgray;
+    overflow: auto;
 }
 
 #SideContent p
@@ -200,7 +202,7 @@ body
         width: 1250px;
         margin-left: auto;
         margin-right: auto;
-        margin-top: 880px;
+        margin-top: 900px;
         text-align: center;
     
 }
@@ -281,6 +283,16 @@ body
     width: 200px;
 }
 .post_title
+{
+    text-align: center;
+}
+
+.registers
+{
+    width: 375px;
+}
+
+.MemberTabContent
 {
     text-align: center;
 }

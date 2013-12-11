@@ -82,12 +82,13 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			tournament_id,
 			tournament_name,
 			tournament_description,
-                        tournament_owner
+                        tournament_owner,
+                        active
                         
 		
                  FROM
 			tournaments
- 
+                 WHERE active = 1;
   
                   ";
 
@@ -260,7 +261,107 @@ else
                         <label for="RightTab">Tournament Members</label>
 
                         <div class="TabContent">
-                            red
+                            <div class="MemberTabContent">
+                           <?php              
+                            
+                       $sql = "SELECT
+			post_id,
+			post_content
+
+		FROM
+			tournament_posts
+                        
+		WHERE
+			tournament_posts.post_id = " . mysqli_real_escape_string($dbc, $_GET['id']);
+			
+                $result = mysqli_query($dbc, $sql);
+
+                if(!$result)
+                {
+                        echo 'The tournament could not be displayed, please try again later.';
+                }
+                else
+                {
+                        if(mysqli_num_rows($result) == 0)
+                        {
+                                echo 'This tournament doesn&prime;t exist.';
+                        }
+                        else
+                        {
+                                while($row = mysqli_fetch_assoc($result))
+                                {
+                                        //display post data
+                                       $title_sql = "SELECT
+                                                            tournament_id,
+                                                            tournament_name
+
+                                                    FROM
+                                                            tournaments
+
+                                                    WHERE
+                                                            tournaments.tournament_id = " . mysqli_real_escape_string($dbc, $_GET['id']);
+                                       
+                                        $posts_title = mysqli_query($dbc, $title_sql);
+                                        
+                                        if(!$posts_title)
+                                        {
+                                                echo '<tr><td>We could not find the tournament .</tr></td></table>';
+                                        }
+                                        else
+                                        {
+                                            while($posts_row = mysqli_fetch_assoc($posts_title))
+                                                    {  
+                                                    echo '<table class="registers" border="1">
+                                                                <tr><td colspan="2" class="post_title"><h2>'. $posts_row['tournament_name'] . '</br> ' . 'Registered Users' .  '</h2><br /> </td></tr>';
+                                                                '<tr>
+                                                                        <th>Users</th>
+                                      
+                                                                </tr>';
+                                                    }
+                                        }
+                                        //fetch the posts from the database
+                                        $posts_sql = "SELECT
+                                                                tournament_posts.post_tournament,
+                                                                tournament_posts.post_content,
+                                                                tournament_posts.post_date,
+                                                                tournament_posts.post_by,
+                                                                tournament_users.user_id,
+                                                                tournament_users.user_name,
+                                                                tournament_users.user_Picture
+                                                        FROM
+                                                                tournament_posts
+                                                        LEFT JOIN
+                                                                tournament_users
+                                                        ON
+                                                                tournament_posts.post_by = tournament_users.user_id
+                                                        WHERE
+                                                                tournament_posts.post_tournament = " . mysqli_real_escape_string($dbc, $_GET['id']);
+
+                                        $posts_result = mysqli_query($dbc, $posts_sql);
+
+                                        if(!$posts_result)
+                                        {
+                                                echo '<tr><td>The posts could not be displayed, please try again later.</tr></td></table>';
+                                        }
+                                        else
+                                        {
+
+                                                while($posts_row = mysqli_fetch_assoc($posts_result))
+                                                {     
+                                                        echo '<tr class="tournament-registers">
+                                                                     
+                                                                        <td class="user-post">' . '<img src="' . MM_UPLOADPATH . $posts_row['user_Picture'] . '">' . '<br/>' . $posts_row['user_name'] . '<br/>' . '</td>
+                                          
+                                                                  </tr>';
+                                                }
+                                        }
+
+                                        //finish the table
+                                        echo '</table>';
+                                }
+                        }
+                }
+?>                      </div>
                         </div> 
                     </div>
                 </div>
