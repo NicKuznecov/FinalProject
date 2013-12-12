@@ -5,6 +5,8 @@ Web-site name: Garlacov Tournaments
 File Description: TournamentTable page of the Garlacov Tournaments web-site.
 -->                       
 
+
+<!-- This is the tournaments table which is the template for each tournament -->
                             <table summary="Tournament Bracket" id="TournamentsTable" >
                                 <tbody>        
                                     <tr>

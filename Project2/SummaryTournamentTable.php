@@ -9,7 +9,7 @@ File Description:  Summary Tournament Table page of the Garlacov Tournaments web
                                     <tr>
                                        
                                        
-                                     
+                                        <!-- Display winner of the tournament -->
                                         <td rowspan="16"><p>Winner: <?php 
                                         
                                          $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -48,6 +48,10 @@ File Description:  Summary Tournament Table page of the Garlacov Tournaments web
                                 </tbody>
                             </table>
 
+
+                            <!-- Summary of entire tournament stages -->
+
+                                
                            <table summary="Tournament Bracket" id="TournamentsTable" >
                                 <tbody>        
                                     <tr>

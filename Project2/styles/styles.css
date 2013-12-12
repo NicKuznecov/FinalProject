@@ -1,12 +1,15 @@
 /* 
     Document   : styles
-    Author     : Nick
+    Author     : Nick Kuznecov, Jake Garland.
     Description:
         Style sheet for divs, footer, header, and navbar.
 */
+
+
+/* Styles for general page layout */
+
 body
 {
-    
     background: -moz-linear-gradient(#252525, #0a0a0a);
     background: -webkit-gradient(linear, from(#252525), to(#0a0a0a));
     background: -webkit-linear-gradient(#252525, #0a0a0a);     
@@ -105,7 +108,7 @@ body
     padding: 25px;
     font-family: Helvetica, sans-serif;
 }
-
+/* Header Styles */
 
 #wrapper {
     
@@ -193,7 +196,7 @@ body
         font-family: Verdana, Geneva, sans-serif;
 }
 
-
+/*Footer styles */
 
 #Footer{
         clear: both;
@@ -212,6 +215,10 @@ body
     padding: 25px;
 }
 
+
+/* Styles for Tabs */
+
+
 .tabs {
   position: relative;   
   min-height: 200px;
@@ -221,9 +228,6 @@ body
 
 
 }
-
-
-
 
 .tab {
   float: left;
@@ -297,11 +301,15 @@ body
     text-align: center;
 }
 
+
 .FutureRow p
 {
     background-color: black;
  
 }
+
+
+/* Styling tournaments table */
 
 #TournamentsTable p
 {

@@ -20,6 +20,7 @@ include('Content.php');
 <?php 
     
 ?>
+<!-- Tabs for tournament levels-->
                 <div class="tabs">
                     <div class="tab">
                         <input type="radio" id="Roundof16" name="tab-group-2" checked>
@@ -67,7 +68,7 @@ include('Content.php');
 <?php
 include('SideContent.php');
 ?>
-
+<!-- Tab for tournaments-->
                 <div class="tabs">
                     <div class="tab">
                         <input type="radio" id="LeftTab" name="tab-group-1" checked>
@@ -80,7 +81,7 @@ include('SideContent.php');
 <?php
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-    
+  //get tournament information from database
  $query = "SELECT
 			tournament_id,
 			tournament_name,
@@ -101,23 +102,24 @@ $result = mysqli_query($dbc, $query);
 $latestPost = mysqli_query($dbc, $query);      
 
                 
-
+//if result is empty give error
 if(!$result)
 {
-	echo 'The tournaments could not be displayed, please try again later.';
+    
+    echo 'The tournaments could not be displayed, please try again later.';
          
         
 }
 else
 {
-	
+	//if no rows are returned dispaly error
         if(mysqli_num_rows($result) == 0)
 	{
 		echo 'No tournaments defined yet.';
 	}
 	else
 	{
-		//prepare the table
+		//tournament list
 		echo '<table border=1>
 			  <tr>
 				<th>Tournaments</th>
@@ -136,26 +138,28 @@ else
 	}
 }
 ?>
-                     </table>
+                    </table>
                         </div> 
                     </div>
                    
+                    <!-- Tournament posts Tab-->
+                    
                     <div class="tab">
                         <input type="radio" id="MiddleTab" name="tab-group-1"  >
                         <label for="MiddleTab">Tournament Posts</label>
 
                         <div class="TabContent">
 <?php              
-                            
+                            //get tournament information
                        $sql = "SELECT
-			post_id,
-			post_content
+                                                            tournament_id,
+                                                            tournament_name
 
-		FROM
-			tournament_posts
-                        
-		WHERE
-			tournament_posts.post_id = " . mysqli_real_escape_string($dbc, $_GET['id']);
+                                                    FROM
+                                                            tournaments
+
+                                                    WHERE
+                                                            tournaments.tournament_id = " . mysqli_real_escape_string($dbc, $_GET['id']);
 			
                 $result = mysqli_query($dbc, $sql);
 
@@ -173,7 +177,7 @@ else
                         {
                                 while($row = mysqli_fetch_assoc($result))
                                 {
-                                        //display post data
+                                        //get tournament information
                                        $title_sql = "SELECT
                                                             tournament_id,
                                                             tournament_name
@@ -202,7 +206,7 @@ else
                                                                 </tr>';
                                                     }
                                         }
-                                        //fetch the posts from the database
+                                        //get tournament post information
                                         $posts_sql = "SELECT
                                                                 tournament_posts.post_tournament,
                                                                 tournament_posts.post_content,
@@ -222,9 +226,7 @@ else
 
                                         $posts_result = mysqli_query($dbc, $posts_sql);
 
-                                        $test = $_GET['id'];
-                                        
-                                        var_dump($test);
+                                        //if no posts are found then give error
                                         
                                         if(!$posts_result)
                                         {
@@ -242,7 +244,7 @@ else
                                                                   </tr>';
                                                 }
                                         }
-
+                                        //if user is not logged in do not let them reply
                                         if(!$_SESSION['signed_in'])
                                         {
                                                 echo '<tr><td colspan=2>You must be <a href="Login.php">signed in</a> to reply. You can also <a href="Register.php">sign up</a> for an account.';
@@ -251,13 +253,13 @@ else
                                         {
                                                 //show reply box
                                                 echo '<tr><td colspan="2"><h2>Reply:</h2><br />
-                                                        <form method="post" action="Reply.php?id=' . $row['post_id'] . '">
+                                                        <form method="post" action="Reply.php?id=' . $row['tournament_id'] . '">
                                                                 <textarea name="reply-content"></textarea><br /><br />
                                                                 <input type="submit" value="Submit reply" />
                                                         </form></td></tr>';
                                         }
 
-                                        //finish the table
+                                        
                                         echo '</table>';
                                 }
                         }
@@ -265,6 +267,7 @@ else
 ?>
                         </div> 
                     </div>
+                    <!-- Tournament members tab -->
                     <div class="tab">
                         <input type="radio" id="RightTab" name="tab-group-1"  >
                         <label for="RightTab">Tournament Members</label>
@@ -272,25 +275,26 @@ else
                         <div class="TabContent">
                             <div class="MemberTabContent">
                            <?php              
-                            
+                            //get tournament information
                        $sql = "SELECT
-			post_id,
-			post_content
+                                                            tournament_id,
+                                                            tournament_name
 
-		FROM
-			tournament_posts
-                        
-		WHERE
-			tournament_posts.post_id = " . mysqli_real_escape_string($dbc, $_GET['id']);
+                                                    FROM
+                                                            tournaments
+
+                                                    WHERE
+                                                            tournaments.tournament_id = " . mysqli_real_escape_string($dbc, $_GET['id']);
 			
                 $result = mysqli_query($dbc, $sql);
-
+                //if tournament info is not found give error
                 if(!$result)
                 {
                         echo 'The tournament could not be displayed, please try again later.';
                 }
                 else
                 {
+                       //if no tournaments rows returned give error
                         if(mysqli_num_rows($result) == 0)
                         {
                                 echo 'This tournament doesn&prime;t exist.';
@@ -328,7 +332,7 @@ else
                                                                 </tr>';
                                                     }
                                         }
-                                        //fetch the posts from the database
+                                        //fetch the registers from the database
                                         $posts_sql = "SELECT
                                                                 tournament_id,
                                                                 registers.register_id,
@@ -344,7 +348,7 @@ else
                                                                 registers.register_tournament = " . mysqli_real_escape_string($dbc, $_GET['id']);
 
                                         $posts_result = mysqli_query($dbc, $posts_sql);
-
+                                        //if posts cannot be found give error
                                         if(!$posts_result)
                                         {
                                                 echo '<tr><td>The posts could not be displayed, please try again later.</tr></td></table>';
@@ -362,7 +366,7 @@ else
                                                 }
                                         }
 
-                                        //finish the table
+                                        
                                         echo '</table>';
                                 }
                         }

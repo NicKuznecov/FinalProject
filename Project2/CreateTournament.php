@@ -54,13 +54,14 @@ else
                                     tournaments
                                                 (tournament_name, 
                                                 tournament_description,
-                                                tournament_owner
+                                                tournament_owner,
+                                                tournament_date
                                                 )
 		   
                           VALUES('" . mysql_real_escape_string($_POST['tournament_name']) . "',
                          '" . mysql_real_escape_string($_POST['tournament_description']) . "',
-                         " . $_SESSION['user_id'] . "
-       
+                         " . $_SESSION['user_id'] . ",
+                             NOW()
                                   )";
                 
 		

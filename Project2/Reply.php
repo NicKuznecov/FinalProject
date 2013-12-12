@@ -25,14 +25,14 @@ if($_SERVER['REQUEST_METHOD'] != 'POST')
 }
 else
 {
-	
+	//if the user is not signed in, ask them to sign in before they can reply
 	if(!$_SESSION['signed_in'])
 	{
 		echo 'You must be signed in to post a reply.';
 	}
 	else
 	{
-		
+		// insert post into database
 		$sql = "INSERT INTO 
 					tournament_posts(post_content,
 						  post_date,
@@ -44,7 +44,8 @@ else
 						" . $_SESSION['user_id'] . ")";
 						
 		$result = mysql_query($sql);
-						
+                var_dump($sql);
+		//if no result give error				
 		if(!$result)
 		{
 			echo 'Your reply has not been saved, please try again later.';

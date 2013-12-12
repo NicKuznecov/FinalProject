@@ -91,7 +91,7 @@ include('SideContent.php');
 
 
  echo '<h2>My Tournaments</h2>';
-
+// get tournament information
    
  
             $query = "SELECT 
@@ -105,13 +105,15 @@ include('SideContent.php');
             WHERE tournament_owner = '" . $_GET['id'] . "'";
 
    $tournament_data = mysqli_query($dbc, $query);
-  if(!$tournament_data)
+  //if tournament data couldnt be acquired give error
+   if(!$tournament_data)
   {
                       echo 'The tournaments could not be displayed, please try again later.';
                 
   }
  else {
-  if (mysqli_num_rows($tournament_data) == 0) 
+    //if no rows are acquired then give appropriate message
+     if (mysqli_num_rows($tournament_data) == 0) 
      {
     echo '<p class="error">You do not have any tournaments at this time.</p>';
   }
@@ -120,11 +122,12 @@ include('SideContent.php');
     $row1 = mysqli_fetch_array($tournament_data);
                             
                             echo'<table>';
+                            //display tournament name
                             if (!empty($row1['tournament_name'])) 
                             {
                                 echo '<tr><td class="label">Tournament: ' . $row1['tournament_name'] . '</td></tr>';
                             }
-
+                            //display tournament description
                             if (!empty($row1['tournament_description'])) 
                             {
                                 echo '<tr><td class="label">Description: ' . $row1['tournament_description'] . '</td></tr>';
@@ -132,6 +135,7 @@ include('SideContent.php');
                            
                     if($row1['active']  == 0)
                     {
+                            //display link to activate tournament if tournament is not active
                             if (!empty($row1['tournament_description'])) 
                             {
                                 echo '<tr><td class="label">Would you like to <a href="ActivateTournament.php?id=' . $row1['tournament_id'] . '">' . 'activate ' . $row1['tournament_name'] .'</a>?</td></tr>';
@@ -139,20 +143,22 @@ include('SideContent.php');
                     }
                     if($row1['active']  == 1) 
                     {
+                        //display link to edit tournamaent if tournament is active
                             if (!empty($row1['tournament_description'])) 
                             {
                                 echo '<tr><td class="label">Would you like to <a href="EditTournament.php?id=' . $row1['tournament_id'] . '">' . 'edit ' . $row1['tournament_name'] .'</a>?</td></tr>';
+                                 echo '<tr><td class="label">Would you like to <a href="CompleteTournament.php?id=' . $row1['tournament_id'] . '">' . 'complete ' . $row1['tournament_name'] .'</a>?</td></tr>';
                             }
                     }
     
 		while($row1 = mysqli_fetch_assoc($tournament_data))
 		{   
-                        
+                           //display tournament name
                             if (!empty($row1['tournament_name'])) 
                             {
                                 echo '<tr><td class="label">Tournament: ' . $row1['tournament_name'] . '</td></tr>';
                             }
-
+                            //display tournament description
                             if (!empty($row1['tournament_description'])) 
                             {
                                 echo '<tr><td class="label">Description: ' . $row1['tournament_description'] . '</td></tr>';
@@ -161,16 +167,20 @@ include('SideContent.php');
                             
                          if($row1['active'] == 0)
                          {     
-                            if (!empty($row1['tournament_description'])) 
+                           //display link to activate tournament if tournament is not active
+                             if (!empty($row1['tournament_description'])) 
                             {
                                 echo '<tr><td class="label">Would you like to <a href="ActivateTournament.php?id=' . $row1['tournament_id'] . '">' . 'activate ' . $row1['tournament_name'] .'</a>?</td></tr>';
                             }
                          }
                           if($row1['active'] == 1)
                          {
+                         //display link to edit tournamaent if tournament is active
                          if (!empty($row1['tournament_description'])) 
                          {
                               echo '<tr><td class="label">Would you like to <a href="EditTournament.php?id=' . $row1['tournament_id'] . '">' . 'edit ' . $row1['tournament_name'] .'</a>?</td></tr>';
+                          echo '<tr><td class="label">Would you like to <a href="CompleteTournament.php?id=' . $row1['tournament_id'] . '">' . 'complete ' . $row1['tournament_name'] .'</a>?</td></tr>';
+                              
                          }
                               
                          }
@@ -185,7 +195,8 @@ include('SideContent.php');
  
   }
  }
-       if (!isset($_GET['user_id']) || ($user_id == $_GET['user_id'])) {
+       //create tournament link
+        if (!isset($_GET['user_id']) || ($user_id == $_GET['user_id'])) {
       echo '<p>Would you like to <a href="CreateTournament.php?id=' . $_GET['tournament_id'] . '">' . 'create a tournament</a>?</p>';
       
         
