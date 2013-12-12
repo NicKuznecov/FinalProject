@@ -1,3 +1,11 @@
+<!--
+File name: 1of16Query.php
+Authors name: Nick Kuznecov, Jake Garland
+Web-site name: Garlacov Tournaments
+File Description:  A query to find the name of the register of position 1.
+-->   
+
+
 <?php 
                                         
                                          $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
@@ -29,4 +37,13 @@
                                                       echo $row['register_name']; 
                                
                                                 
-                                        }  ?>
+                                        } 
+//
+//                              $query  = "SELECT register_level FROM registers
+//                          
+//                              WHERE register_tournament =  '" . $_GET['id'] . "'
+//                              AND
+//                                register_by = '" . $_SESSION['user_id'] . "'
+//                              AND
+//                              register_level = 1
+//                              ";?>

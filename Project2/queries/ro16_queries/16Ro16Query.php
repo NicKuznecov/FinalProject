@@ -1,3 +1,10 @@
+<!--
+File name: 16of16Query.php
+Authors name: Nick Kuznecov, Jake Garland
+Web-site name: Garlacov Tournaments
+File Description:  A query to find the name of the register of position 16.
+-->   
+
 <?php                                         
                                          $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
                                          $registers_sql = "SELECT

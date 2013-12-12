@@ -1,3 +1,11 @@
+<!--
+File name: 5of16Query.php
+Authors name: Nick Kuznecov, Jake Garland
+Web-site name: Garlacov Tournaments
+File Description:  A query to find the name of the register of position 5.
+-->   
+
+
 <?php
                                          $registers_sql = "SELECT
                                                                 registers.register_name

@@ -23,7 +23,7 @@ include('Content.php');
 <?
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-
+//if user is already signed in, hide form and display message redirecting them to the logout page
 if(isset($_SESSION['signed_in']) && $_SESSION['signed_in'] == true)
 {
 	echo 'You are already signed in, you can <a href="Logout.php">log out</a> if you want.';
@@ -32,7 +32,7 @@ else
 {	
     if($_SERVER['REQUEST_METHOD'] != 'POST')
 	{
-                  
+                    //login form
                     echo '<form method="post" action="">
 			Username: <input type="text" name="user_name" /></br>
 			Password: <input type="password" name="user_pass"></br>
@@ -65,7 +65,7 @@ else
                 }
 		else
 		{
-                        
+                        //select user information from database
 			$query = "SELECT 
 						user_id,
 						user_name,
@@ -88,7 +88,7 @@ else
 			}
 			else
 			{
-			
+                                //if user combo is wrong show error
 				if(mysqli_num_rows($result) == 0)
 				{
 					echo 'You have supplied a wrong username/password combination.';
@@ -97,7 +97,7 @@ else
 			
                                 else
 				{
-					
+					// is user combo is right than set signed_in equal to true
 					$_SESSION['signed_in'] = true;
 					
 					while($row = mysqli_fetch_assoc($result))
@@ -106,7 +106,7 @@ else
 						$_SESSION['user_name'] 	= $row['user_name'];
 						$_SESSION['user_level'] = $row['user_level'];
 					}
-				
+                                        //welcome message
 					echo 'Welcome, ' . $_SESSION['user_name'] . '. <a href="Home.php">Return to the Home page.</a>.';
                                       
                                         

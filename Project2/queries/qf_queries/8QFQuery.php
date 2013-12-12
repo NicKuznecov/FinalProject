@@ -1,3 +1,10 @@
+<!--
+File name: 8QFQuery.php
+Authors name: Nick Kuznecov, Jake Garland
+Web-site name: Garlacov Tournaments
+File Description:  A query to find the name of the register of position 8 of the quarter finals.
+-->   
+
 <?php 
                                         
                                          $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);

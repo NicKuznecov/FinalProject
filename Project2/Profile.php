@@ -16,16 +16,14 @@ echo '<h2>My Profile</h2>';
 
 $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
+//if the user is not signed in ask them to sign in
 if($_SESSION['signed_in'] == false)
 {
 	echo 'You are not signed in, <a href="Login.php">log in </a>.';
 }
 else
 {
- // if (!isset($_GET['user_id'])) {
-  //  $query = "SELECT user_name, user_firstName, user_lastName, user_city, user_country, picture FROM users WHERE user_id = '$user_id'";
- // }
- // else {
+//Query selecting all user information for user who is signed in
     $query = "SELECT 
                         user_name, 
                         user_email, 
@@ -44,6 +42,8 @@ else
   
     $row = mysqli_fetch_array($data);
     
+    
+     //Table of user information
     echo '<table>';
     if (!empty($row['user_Picture'])) {
       echo '<tr><td class="label">Profile Picture </br> <img src="' . MM_UPLOADPATH . $row['user_Picture'] .
@@ -51,21 +51,25 @@ else
     }
     
 
-    
+    //Username displayed
     if (!empty($row['user_name'])) {
       echo '<tr><td class="label">Username: ' . $row['user_name'] . '</td></tr>';
     }
+    //User email is displayed
     if (!empty($row['user_email'])) {
       echo '<tr><td class="label">Email: ' . $row['user_email'] . '</td></tr>';
     }
+    //User first name is displayed
     if (!empty($row['user_firstName'])) {
       echo '<tr><td class="label">First name: ' . $row['user_firstName'] . '</td></tr>';
     }
+    //User last name is displayed
     if (!empty($row['user_lastName'])) {
       echo '<tr><td class="label">Last name: ' . $row['user_lastName'] . '</td></tr>';
     }
       echo '</td></tr>';
-    if (!empty($row['user_city']) || !empty($row['user_country'])) {
+    //User country is displayed
+     if (!empty($row['user_country'])) {
       echo '<tr><td class="label">Location: ' . $row['user_country'] . '</td></tr>';
     }
 

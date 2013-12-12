@@ -8,9 +8,11 @@ File Description: Semi Final Tournament Table page of the Garlacov Tournaments w
                                 <tbody>        
                                     <tr>
                                        
-                                       
+                                          <!-- Query to find user position -->
                                         <td rowspan="4"><p>Player: <?php include('queries/sf_queries/1SFQuery.php')?></p></td>
+                                           <!-- Query to find user position -->
                                         <td rowspan="8" class="FutureRow"><p>team name</p></td>
+                                          <!-- Query to find user position -->
                                         <td rowspan="16" class="FutureRow"><p>team name</p></td>
                                     </tr>
                                     <tr>
@@ -25,7 +27,7 @@ File Description: Semi Final Tournament Table page of the Garlacov Tournaments w
                                     </tr>
                                     <tr>
                                         
-                                        
+                                           <!-- Query to find user position -->
                                         <td rowspan="4"><p>Player: <?php include('queries/sf_queries/4SFQuery.php')?></p></td>
                                     </tr>
                                     <tr>
@@ -40,8 +42,9 @@ File Description: Semi Final Tournament Table page of the Garlacov Tournaments w
                                     </tr>
                                     <tr>
                                        
-                                      
-                                        <td rowspan="4"><p>Player: <?php include('queries/sf_queries/2SFQuery.php')?></p></td>
+                                         <!-- Query to find user position -->
+                                        <td rowspan="4"><p>Player: <?php include('queries/sf_queries/3SFQuery.php')?></p></td>
+                                           <!-- Query to find user position -->
                                         <td rowspan="8" class="FutureRow"><p>team name</p></td>
                                     </tr>
                                     <tr>
@@ -56,7 +59,7 @@ File Description: Semi Final Tournament Table page of the Garlacov Tournaments w
                                     </tr>
                                     <tr>
                                        
-                                     
+                                        <!-- Query to find user position -->
                                         <td rowspan="4"><p>Player: <?php include('queries/sf_queries/2SFQuery.php')?></p></td>
                                     </tr>
                                     <tr>

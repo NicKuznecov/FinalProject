@@ -23,7 +23,7 @@ include('Content.php');
 <?php
 echo '<h2>Sign out</h2>';
 
-
+//if user is logged in, log them out
 if($_SESSION['signed_in'] == true)
 {
 	
@@ -35,7 +35,8 @@ if($_SESSION['signed_in'] == true)
 }
 else
 {
-	echo 'You are not signed in. Would you <a href="signIn.php">like to</a>?';
+    //ask user to sign in	
+    echo 'You are not signed in. Would you <a href="signIn.php">like to</a>?';
 }
 
  $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/Home.php';

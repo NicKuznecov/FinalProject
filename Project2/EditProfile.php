@@ -1,8 +1,8 @@
 <!--
-File name: Reply.php
+File name: EditProfile.php
 Authors name: Nick Kuznecov, Jake Garland
 Web-site name: Garlacov Tournaments
-File Description: Reply page of Garlacov Tournaments
+File Description: Edit Profile page of Garlacov Tournaments
 -->
 
 <?php

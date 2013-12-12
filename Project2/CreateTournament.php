@@ -23,6 +23,7 @@ include('Content.php');
 <?
 
 echo '<h2>Create a Tournament</h2>';
+//if user isnt signed in show error
 if($_SESSION['signed_in'] == false )//| $_SESSION['user_level'] != 1 )
 {
 	
@@ -33,7 +34,7 @@ else
 	
 	if($_SERVER['REQUEST_METHOD'] != 'POST')
 	{
-		
+		//form for tournament information
 		echo '<form method="post" action="">
 			Tournament name: <input type="text" name="tournament_name" /><br />
 			Tournament description:<br /> <textarea name="tournament_description" /></textarea><br /><br />
@@ -47,7 +48,8 @@ else
 
 
            //$registered = mysql_query($register_query);
-               
+           
+           //insert information about tournament into database
             $query = "INSERT INTO 
                                     tournaments
                                                 (tournament_name, 
@@ -65,13 +67,15 @@ else
                
                 $result = mysql_query($query);
               
+                //if query returns no result show error
 		if(!$result)
 		{
 		
 			echo 'Error' . mysql_error();
 
 		}
-		else
+		//show success message if everything works
+                else
 		{
 			echo 'New tournament succesfully added.';
 		}

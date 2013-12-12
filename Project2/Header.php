@@ -1,8 +1,8 @@
 <!--
-File name: header.php
+File name: Header.php
 Authors name: Nick Kuznecov, Jake Garland
 Web-site name: Garlacov Tournaments
-File Description: Header page which consists of the nav menu, and css/js includes. Also everything written after this page(header.php) and before sideContent.php will show up on the left div.
+File Description: Header page which consists of the nav menu, and css/js includes. 
 -->   
 
 

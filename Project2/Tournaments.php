@@ -222,6 +222,10 @@ else
 
                                         $posts_result = mysqli_query($dbc, $posts_sql);
 
+                                        $test = $_GET['id'];
+                                        
+                                        var_dump($test);
+                                        
                                         if(!$posts_result)
                                         {
                                                 echo '<tr><td>The posts could not be displayed, please try again later.</tr></td></table>';

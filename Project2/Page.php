@@ -1,7 +1,7 @@
 <!--
-File name: Content.php
+File name: Page.php
 Authors name: Nick Kuznecov, Jake Garland
 Web-site name: Garlacov Tournaments
-File Description: Content page that consists of the website background.
+File Description: Page div.
 -->
             <div id="Page">

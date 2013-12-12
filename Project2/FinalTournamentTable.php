@@ -9,8 +9,9 @@ File Description: Final Tournament Table page of the Garlacov Tournaments web-si
                                     <tr>
                                        
                                        
-                                        
+                                         <!-- Query to find user position -->
                                         <td rowspan="8"><p>Player: <?php include('queries/f_queries/1FQuery.php') ?></p></td>
+                                         <!-- Query to find user position -->
                                         <td rowspan="16" class="FutureRow"><p>team name</p></td>
                                     </tr>
                                     <tr>
@@ -41,7 +42,7 @@ File Description: Final Tournament Table page of the Garlacov Tournaments web-si
                                     <tr>
                                        
                                       
-                                        
+                                         <!-- Query to find user position -->
                                         <td rowspan="8"><p>Player: <?php include('queries/f_queries/2FQuery.php') ?></p></td>
                                     </tr>
                                     <tr>
