@@ -14,10 +14,14 @@ include('Content.php');
 <?php
 echo '<h2>My Profile</h2>';
 
+$dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 
-  $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
-
-
+if($_SESSION['signed_in'] == false)
+{
+	echo 'You are not signed in, <a href="Login.php">log in </a>.';
+}
+else
+{
  // if (!isset($_GET['user_id'])) {
   //  $query = "SELECT user_name, user_firstName, user_lastName, user_city, user_country, picture FROM users WHERE user_id = '$user_id'";
  // }
@@ -182,7 +186,7 @@ include('SideContent.php');
       
         
       }
- 
+}
   mysqli_close($dbc);
 ?>
     

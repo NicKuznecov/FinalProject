@@ -55,7 +55,7 @@ include('Content.php');
                     </div>
                     <div class="tab">
                         <input type="radio" id="Champion!" name="tab-group-2">
-                        <label for="Champion!">Champion!</label>
+                        <label for="Champion!">Summary</label>
 
                         <div class="TabContent">
                               <?php include('SummaryTournamentTable.php');?>
@@ -86,12 +86,14 @@ $dbc = mysqli_connect(DB_HOST, DB_USER, DB_PASSWORD, DB_NAME);
 			tournament_name,
 			tournament_description,
                         tournament_owner,
-                        active
+                        tournament_date,
+                        active,
+                        tournament_status
                         
 		
                  FROM
 			tournaments
-                 WHERE active = 1;
+                 WHERE active = 1
   
                   ";
 
@@ -126,7 +128,7 @@ else
 		{				
 			echo '<tr>';
 				echo '<td class="leftpart">';
-					echo '<h3><a href="Tournaments.php?id=' . $row['tournament_id'] . '">' . $row['tournament_name'] . '</a></h3>' . $row['tournament_description'] . '</br>' . 'Created at: ' . $row['MAX(posts.post_date)'] . '</br> Created by: ' . $row['tournament_owner'] . ' ';
+					echo '<h3><a href="Tournaments.php?id=' . $row['tournament_id'] . '">' . $row['tournament_name'] . '</a></h3>' . $row['tournament_description'] . '</br>' . 'Created at: ' . $row['tournament_date'] . '</br> Created by: ' . $row['tournament_owner'] . '</br>Current Status: ' . $row['tournament_status'] . ' ';
 				echo '</td>';
 			echo '</tr>';
                         

@@ -124,6 +124,7 @@ body
         color: white;
         font-size: 52px;
         padding:20px;
+       
 }
 
 #menu {	
@@ -294,5 +295,20 @@ body
 
 .MemberTabContent
 {
+    text-align: center;
+}
+
+.FutureRow p
+{
+    background-color: black;
+ 
+}
+
+#TournamentsTable p
+{
+    font-size: 12px;
+    width: 100px;
+    height: 100px;
+    padding: 5px;
     text-align: center;
 }

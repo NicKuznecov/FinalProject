@@ -23,7 +23,7 @@ else
 	
 	if($_SERVER['REQUEST_METHOD'] != 'POST')
 	{
-		
+		include('EditTournamentTable.php');
 //		echo '<form method="post" action="">
 //			Player #1: <input type="text" name="register" class="1" /><br />
 //                        <input type="submit" value="Activate Tournament" />

@@ -37,13 +37,14 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                    echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
-                                        <td rowspan="2" class="FutureRow"><p>team name</p></td>
-                                        <td rowspan="4" class="FutureRow"><p>team name</p></td>
-                                        <td rowspan="8" class="FutureRow"><p>team name</p></td>
-                                        <td rowspan="16" class="FutureRow"><p>team name</p></td>
+                                        <td rowspan="2"><p>team name</p></td>
+                                        <td rowspan="4"><p>team name</p></td>
+                                        <td rowspan="8"><p>team name</p></td>
+                                        <td rowspan="16"><p>team name</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>16. <?php                                         
@@ -74,7 +75,8 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
                                     </tr>
@@ -107,10 +109,11 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         } ?></p></td>
-                                        <td rowspan="2" class="FutureRow"><p>team name</p></td>
+                                        <td rowspan="2"><p>team name</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>9. <?php                                          
@@ -141,7 +144,8 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         } ?></p></td>
                                     </tr>
@@ -174,11 +178,12 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
-                                        <td rowspan="2" class="FutureRow"><p>team name</p></td>
-                                        <td rowspan="4" class="FutureRow"><p>team name</p></td>
+                                        <td rowspan="2"><p>team name</p></td>
+                                        <td rowspan="4"><p>team name</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>12. <?php                                         
@@ -209,7 +214,8 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
                                     </tr>
@@ -242,10 +248,11 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         } ?></p></td>
-                                        <td rowspan="2" class="FutureRow"><p>team name</p></td>
+                                        <td rowspan="2"><p>team name</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>13. <?php                                          
@@ -276,7 +283,8 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         } ?></p></td>
                                     </tr>
@@ -309,12 +317,13 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
-                                        <td rowspan="2" class="FutureRow"><p>team name</p></td>
-                                        <td rowspan="4" class="FutureRow"><p>team name</p></td>
-                                        <td rowspan="8" class="FutureRow"><p>team name</p></td>
+                                        <td rowspan="2"><p>team name</p></td>
+                                        <td rowspan="4"><p>team name</p></td>
+                                        <td rowspan="8"><p>team name</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>11. <?php                                         
@@ -345,7 +354,8 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
                                     </tr>
@@ -378,10 +388,11 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         } ?></p></td>
-                                        <td rowspan="2" class="FutureRow"><p>team name</p></td>
+                                        <td rowspan="2"><p>team name</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>14. <?php                                         
@@ -412,7 +423,8 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
                                     </tr>
@@ -445,11 +457,12 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
-                                        <td rowspan="2" class="FutureRow"><p>team name</p></td>
-                                        <td rowspan="4" class="FutureRow"><p>team name</p></td>
+                                        <td rowspan="2"><p>team name</p></td>
+                                        <td rowspan="4"><p>team name</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>10. <?php                                         
@@ -480,7 +493,8 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
                                     </tr>
@@ -513,10 +527,11 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         
                                             
                                                       echo $row['register_name']; 
-                                  
+                                                      echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         } ?></p></td>
-                                        <td rowspan="2" class="FutureRow"><p>team name</p></td>
+                                        <td rowspan="2"><p>team name</p></td>
                                     </tr>
                                     <tr>
                                         <td><p>15. <?php                                         
@@ -544,10 +559,10 @@ File Description: TournamentTable page of the Garlacov Tournaments web-site.
                                         else
                                         {
                                         $row = mysqli_fetch_array($registers_result);
-                                        
                                             
-                                                      echo $row['register_name']; 
-                                  
+                                                echo $row['register_name'];              
+                                                echo '<button type="button">Promote('.$row['register_name'].')</button>'; 
+
                                                 
                                         }  ?></p></td>
                                     </tr>
